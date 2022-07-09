@@ -11,3 +11,6 @@ packages:
   Polyline:
     url: https://github.com/raphaelmor/Polyline.git
     majorVersion: 5.0.2
+  OHHTTPStubs:
+    url: https://github.com/AliSoftware/OHHTTPStubs.git
+    majorVersion: 9.1.0

@@ -1,39 +1,27 @@
-# Pacer
+# TrackRoute
 
-## Description 
+## Installation
 
-### English
-GRAB YOUR SNEAKERS AND RUN! Set pace goals for your workouts and Pacer will help you achieve it. You will be able to register your workouts to view your progress and the best part is that it is completely FREE. Pacer is going to mark your running pace based in your step length. You will be able to check details such as distance, pace target, average pace, burned energy, etcetera.
+Xcode config is based on Xcodegen. In order to configure your local environment you're going to need to execute:
 
-Too slow or too fast? Don't worry, once a workout is started you are the owner of your pace and you'll be able to change it whenever you want.
+```bash
+./prepare_environment.sh
+```
 
-Don't worry about your data. Pacer is going to store your workout data only in your Apple Watch and they will never leave your device. This app is for you and you are our priority.
+## About the code
 
-Do you consider we are doing it well? Our team is going to be so happy to hear from you.
+The code is structured following CLEAN principles. It is splitted into the following layers:
+* **Domain**: Business logic and core logic of the app
+* **Data**: Layer that handles the origin of the data the app presents
+* **Networking**: Abstraction of the networking layer
+* **Presentation**: Layer in charge of presenting the information to the user
+* **Components**: Provides the DSL for the application
+* **App**: Represents the final binary which is going to be delivered to the user
 
-Pacer | Let's run
+## Dependencies
 
-### Spanish
+Dependencies are intended to be delivered as precompiled frameworks. `Polyline` and `OHHTTPStubs`don't provide a precompiled xcframework so we're going to use them in the source code.
 
-¡PONTE LAS ZAPATILLAS Y A CORRER!. Proponte objetivos de ritmo para tus entrenamientos y Pacer te ayudará a seguirlos. Podrás registrar tus sesiones de entrenamiento para ver tu progreso y todo completamente gratis. Pacer te irá marcando el ritmo al que tu quieras correr adaptándose a tu zancada. Comprueba detalles de tus sesiones como distancia, ritmo objetivo, ritmo medio, calorías quemadas etc.
-
-¿Necesitas cambiar el ritmo? No te preocupes, una vez empezada la sesión tu controlas el ritmo. Puedes cambiarlo sin problema cuando quieras. 
-
-Tus datos están siempre contigo. Pacer almacena tus datos de entrenamiento, pero en ningún momento saldrán de tu dispositivo. Pacer es para ti y tú eres nuestra prioridad.
-
-¿Crees que lo hacemos bien? Nuestro equipo está ansioso de escucharte. 
-
-Pacer | ¡A correr!
-
-## Promotional text 
-
-### English
-Set your goals and let's run! Pacer is going to help you with maintaining your running pace during your workout. We adapt the pace based on your step length. 
-
-Pacer
-
-### Spanish
-
-¡Ponte un objetivo y a correr! Pacer te ayudará a mantener el ritmo durante tu carrera. Pacer adapta la velocidad de tu pisada en base a tu longitud de paso.
-
-Pacer
+* **DependencyInjection**: Is located in frameworks (usually I'll distribute it through SPM instead of adding it on the repo). If you want to check the code it's located [here](https://github.com/AlbGarciam/DependencyInjection). Allows dependency inversion in a simple manner.
+* **OHHTTPStubs**: Makes network testing easier.
+* **Polyline**: Requested by the project

@@ -22,3 +22,5 @@ targets:
     sources: ./Tests
     dependencies:
       - target: Data
+      - package: OHHTTPStubs
+        product: OHHTTPStubsSwift

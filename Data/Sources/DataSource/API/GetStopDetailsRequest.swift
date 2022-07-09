@@ -6,6 +6,6 @@ struct GetStopDetailsRequest: APIRequest {
     let path: String
 
     init(_ stopIdentifier: String) {
-        self.path = "api/stops/\(stopIdentifier)"
+        self.path = "/api/stops/\(stopIdentifier)"
     }
 }
