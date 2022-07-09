@@ -1,0 +1,24 @@
+name: Data
+targets:
+  Data:
+    type: framework
+    platform: iOS
+    sources: ./Sources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mobile.trackRoute.data
+        OTHER_LDFLAGS: $(inherited) -ObjC
+    dependencies:
+      - target: Domain
+      - target: Networking
+      - package: Polyline
+      - framework: ../Frameworks/DependencyInjection.xcframework
+    scheme:
+      testTargets:
+        - DataTests
+  DataTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: ./Tests
+    dependencies:
+      - target: Data

@@ -1,0 +1,40 @@
+targets:
+  TrackRoute:
+    type: application
+    platform: iOS
+    dependencies:
+      - target: Components
+        embed: false
+      - target: Data
+        embed: false
+      - target: Domain
+        embed: false
+      - target: Presentation
+        embed: false
+      - target: Networking
+        embed: false
+      - framework: ../Frameworks/DependencyInjection.xcframework
+        embed: false
+    sources:
+      - ./Sources
+    settings:
+      base:
+        SDKROOT: iOS
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      configs:
+        Debug:
+          PROVISIONING_PROFILE_SPECIFIER: "TrackRoute App Development"
+        Release:
+          PROVISIONING_PROFILE_SPECIFIER: "TrackRoute App AppStore"
+    scheme:
+      testTargets:
+        - TrackRouteTests
+  TrackRouteTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: ./Tests
+    dependencies:
+      - target: ComponentsTests
+      - target: DataTests
+      - target: DomainTests
+      - target: PresentationTests

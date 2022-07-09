@@ -1,0 +1,87 @@
+"sessions_now_playing" = "Now playing";
+"sessions_now_playing_empty_title" = "No songs added";
+
+"sessions_landing_create_session_title" = "Create session";
+"sessions_landing_create_session_subtitle" = "Let's make the best party ever made";
+
+"sessions_landing_remote_sessions_title" = "Parties close to you";
+"sessions_landing_remote_sessions_empty_title" = "Can't find your friends?";
+"sessions_landing_remote_sessions_empty_subtitle" = "Let's try to find them";
+
+"sessions_landing_recover_sessions_title" = "My sessions";
+"sessions_landing_recover_sessions_empty_title" = "No sessions found";
+"sessions_landing_recover_sessions_empty_subtitle" = "They will appear once you create your own";
+
+"sessions_landing_service_selector_title" = "Choose your streaming service";
+"sessions_landing_service_selector_subtitle" = "We’re going to connect Nalu with your account. You should have a valid subscription to the selected service";
+"sessions_landing_service_selector_action" = "Cancel";
+
+"sessions_error_unsupported_playback_title" = "Download full app";
+"sessions_error_unsupported_playback_subtitle" = "This version of the app can't play music, you can just connect to other sessions. Please download the full version of the app";
+"sessions_error_unsupported_playback_action" = "Download Nalu";
+
+"sessions_error_invalid_music_service_title" = "Invalid streaming service";
+"sessions_error_invalid_music_service_subtitle" = "We couldn't detect a valid subscription to the streaming service. Please check the credentials and try again";
+"sessions_error_invalid_music_service_action" = "Understood";
+
+"sessions_error_advertising_warning_title" = "Bluetooth is disabled";
+"sessions_error_advertising_warning_subtitle" = "You need to activate bluetooth to be able to share your session with your friends";
+"sessions_error_advertising_warning_action" = "Activate bluetooth";
+
+"sessions_error_missed_session_title" = "Session was lost";
+"sessions_error_missed_session_subtitle" = "We can't reach this session. Please check your bluetooth settings";
+"sessions_error_missed_session_action" = "Understood";
+
+"sessions_detail_add_songs" = "Add songs";
+"sessions_detail_upcoming_songs" = "Upcoming songs";
+"sessions_detail_empty_title" = "No more songs on the session";
+"sessions_detail_empty_subtitle" = "Try add new ones by tapping on \"Add songs\" button";
+
+"sessions_error_finish_session_title" = "Are you sure?";
+"sessions_error_finish_session_subtitle" = "You're going to finish the session. This action can't be undone";
+"sessions_error_finish_session_action" = "Finish session";
+
+"sessions_empty_song_1_title" = "Dance monkey";
+"sessions_empty_song_1_subtitle" = "Tones and I";
+"sessions_empty_song_2_title" = "Higher power";
+"sessions_empty_song_2_subtitle" = "Coldplay";
+
+"sessions_search_title" = "Add songs";
+"sessions_search_list_title" = "Search results";
+"sessions_search_empty_title" = "No songs found";
+"sessions_search_empty_subtitle" = "We coulnd't find the option. Try with a new one";
+"sessions_search_error_title" = "Something happened";
+"sessions_search_error_subtitle" = "There was an error in your request, please try a new one";
+"sessions_search_origin_apple_music" = "Apple Music";
+"sessions_search_origin_my_library" = "My library";
+"sessions_search_origin_spotify" = "Spotify";
+"sessions_search_placeholder" = "Search song";
+
+"sessions_share_overlay_title" = "Scan the code";
+"sessions_share_overlay_subtitle" = "Scan the code with the camera. In case you can't, you can still share us with the \"Other methods\" button";
+"sessions_share_overlay_action" = "Other methods";
+"sessions_share_text" = "Check out this app for our party!";
+
+"scanning_overlay_scanning_title" = "Help is on the way!";
+"scanning_overlay_scanning_subtitle" = "We're searching for your friends. We're restoring our systems to connect you with them";
+"scanning_overlay_scanning_action" = "Cancel";
+
+"scanning_overlay_any_title" = "Ooooooooops";
+"scanning_overlay_any_subtitle" = "Something is broken on the bluetooth, please try again later";
+"scanning_overlay_any_action" = "Understood";
+
+"scanning_overlay_unsupported_title" = "Unsupported device";
+"scanning_overlay_unsupported_subtitle" = "This device doesn't have bluetooth. We need it to share your sessions";
+"scanning_overlay_unsupported_action" = "Understood";
+
+"scanning_overlay_resetting_title" = "Bluetooth is resetting";
+"scanning_overlay_resetting_subtitle" = "Wait a few seconds until bluetooth comes back again. If the problem persists, disable and enable it again from control center";
+"scanning_overlay_resetting_action" = "Understood";
+
+"scanning_overlay_unauthorized_title" = "Hmmm, we need you!";
+"scanning_overlay_unauthorized_subtitle" = "We need you to grant us access to bluetooth services";
+"scanning_overlay_unauthorized_action" = "Grant access";
+
+"scanning_overlay_poweredOff_title" = "No bluetooth... no party!";
+"scanning_overlay_poweredOff_subtitle" = "We can't work without bluetooth, please enable it before using us";
+"scanning_overlay_poweredOff_action" = "Activate bluetooth";

@@ -1,0 +1,21 @@
+name: Domain
+targets:
+  Domain:
+    type: framework
+    platform: iOS
+    sources: ./Sources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mobile.trackRoute.domain
+        OTHER_LDFLAGS: $(inherited) -ObjC
+    dependencies:
+      - framework: ../Frameworks/DependencyInjection.xcframework
+    scheme:
+      testTargets:
+        - DomainTests
+  DomainTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: ./Tests
+    dependencies:
+      - target: Domain

@@ -1,0 +1,12 @@
+default_platform(:ios)
+
+platform :ios do
+  before_all do |lane, options|
+    prepare
+  end
+
+  desc "Prepares the project"
+  lane :prepare do
+    sh("cd .. && xcodegen && cd fastlane")
+  end
+end

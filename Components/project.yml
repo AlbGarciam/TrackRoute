@@ -1,0 +1,17 @@
+name: Components
+targets:
+  Components:
+    type: framework
+    platform: iOS
+    sources: ./Sources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mobile.trackRoute.components
+        OTHER_LDFLAGS: $(inherited) -ObjC
+    scheme:
+      testTargets:
+        - ComponentsTests
+  ComponentsTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: ./Tests

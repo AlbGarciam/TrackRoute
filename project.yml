@@ -1,0 +1,13 @@
+include:
+  - ./configuration.yml
+  - App/project.yml
+  - Components/project.yml
+  - Data/project.yml
+  - Domain/project.yml
+  - Presentation/project.yml
+  - Networking/project.yml
+name: TrackRoute
+packages:
+  Polyline:
+    url: https://github.com/raphaelmor/Polyline.git
+    majorVersion: 5.0.2

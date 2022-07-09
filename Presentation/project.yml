@@ -1,0 +1,22 @@
+name: Presentation
+targets:
+  Presentation:
+    type: framework
+    platform: iOS
+    sources: ./Sources
+    settings:
+      base:
+        SUPPORTED_PLATFORMS: watchos watchsimulator
+        PRODUCT_BUNDLE_IDENTIFIER: com.mobile.trackRoute.presentation
+        OTHER_LDFLAGS: $(inherited) -ObjC
+    dependencies:
+      - target: Components
+      - target: Domain
+      - framework: ../Frameworks/DependencyInjection.xcframework
+    scheme:
+      testTargets:
+        - PresentationTests
+  PresentationTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: ./Tests

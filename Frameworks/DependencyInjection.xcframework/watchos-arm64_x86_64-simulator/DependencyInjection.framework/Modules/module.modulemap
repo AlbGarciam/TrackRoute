@@ -1,0 +1,4 @@
+framework module DependencyInjection {
+  header "DependencyInjection-Swift.h"
+  requires objc
+}

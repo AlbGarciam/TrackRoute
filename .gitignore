@@ -1,0 +1,11 @@
+*.xcodeproj/
+Dependencies/
+Carthage/
+
+fastlane/Readme.md
+fastlane/report.xml
+
+Cartfile
+Cartfile.resolved
+
+*.lock*

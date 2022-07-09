@@ -1,0 +1,17 @@
+name: Networking
+targets:
+  Networking:
+    type: framework
+    platform: iOS
+    sources: ./Sources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mobile.trackRoute.networking
+        OTHER_LDFLAGS: $(inherited) -ObjC
+    scheme:
+      testTargets:
+        - NetworkingTests
+  NetworkingTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: ./Tests
