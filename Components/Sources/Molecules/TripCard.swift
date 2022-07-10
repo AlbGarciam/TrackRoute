@@ -11,8 +11,11 @@ public struct TripCard: View {
     public var body: some View {
         ZStack(alignment: .topLeading) {
             RoundedRectangle(cornerRadius: 24)
-                .stroke(Color.cardBorder, lineWidth: 1)
+                .fill(Color.background)
                 .zIndex(0)
+            RoundedRectangle(cornerRadius: 24)
+                .stroke(Color.cardBorder, lineWidth: 1)
+                .zIndex(1)
             VStack(alignment: .leading, spacing: 12) {
                 HStack {
                     Text(title)
@@ -20,7 +23,7 @@ public struct TripCard: View {
                         .font(.semibold(16))
                         .foregroundColor(.primaryText)
                     Spacer()
-                    Badge().setTitle(badgeText)
+                    Badge().setTitle(LocalizedStringKey(badgeText))
                 }
                 HStack(alignment: .center) {
                     VStack(alignment: .leading, spacing: 12) {

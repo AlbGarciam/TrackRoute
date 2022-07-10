@@ -8,6 +8,12 @@ protocol TripRemoteDataSourceContract: Injectable {
 }
 
 final class TripRemoteDataSource: TripRemoteDataSourceContract {
+    init() {
+        #if DEBUG
+        MockManager.configureMocks()
+        #endif
+    }
+    
     func getTrips() -> AnyPublisher<[TripModel], Error> {
         GetTripsRequest().makeRequest()
             .tryMap { trips in try trips.map { try $0.toDomain() } }

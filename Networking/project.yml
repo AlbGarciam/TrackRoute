@@ -8,6 +8,9 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.mobile.trackRoute.networking
         OTHER_LDFLAGS: $(inherited) -ObjC
+    dependencies: # Just because API is returning error 500 always.
+      - package: OHHTTPStubs
+        product: OHHTTPStubsSwift
     scheme:
       testTargets:
         - NetworkingTests

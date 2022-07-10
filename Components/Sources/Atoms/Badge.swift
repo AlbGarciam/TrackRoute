@@ -1,7 +1,7 @@
 import SwiftUI
 
 public struct Badge: View {
-    private var title = ""
+    private var title: LocalizedStringKey = ""
 
     public var body: some View {
         Text(title)
@@ -12,7 +12,7 @@ public struct Badge: View {
                             .fill(Color.highlight))
     }
 
-    public func setTitle(_ value: String) -> Self {
+    public func setTitle(_ value: LocalizedStringKey) -> Self {
         var copy = self
         copy.title = value
         return copy

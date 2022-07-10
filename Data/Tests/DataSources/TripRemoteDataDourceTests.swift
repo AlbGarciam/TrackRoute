@@ -1,9 +1,9 @@
 import Combine
 @testable import Data
 import Domain
-import OHHTTPStubs
-import XCTest
+@_implementationOnly import OHHTTPStubs
 @_implementationOnly import OHHTTPStubsSwift
+import XCTest
 
 class TripRemoteDataDourceTests: XCTestCase {
     private var sut: TripRemoteDataSource!
@@ -20,6 +20,7 @@ class TripRemoteDataDourceTests: XCTestCase {
     }
 
     func testGetTripsResult() {
+        HTTPStubs.removeAllStubs()
         stub(condition: isPath("/api/trips")) { _ in
             let stubPath = OHPathForFile("GetTrips.json", type(of: self))
             return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
@@ -35,6 +36,7 @@ class TripRemoteDataDourceTests: XCTestCase {
     }
 
     func testGetTripsFailure() {
+        HTTPStubs.removeAllStubs()
         stub(condition: isPath("/api/trips")) { _ in
             return fixture(filePath: "", status: 500, headers: nil)
         }
@@ -49,6 +51,7 @@ class TripRemoteDataDourceTests: XCTestCase {
     }
 
     func testStopDetailsResult() {
+        HTTPStubs.removeAllStubs()
         stub(condition: isPath("/api/stops/1234")) { _ in
             let stubPath = OHPathForFile("StopDetails.json", type(of: self))
             return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
@@ -63,6 +66,7 @@ class TripRemoteDataDourceTests: XCTestCase {
     }
 
     func testStopDetailsFailure() {
+        HTTPStubs.removeAllStubs()
         stub(condition: isPath("/api/stops/1234")) { _ in
             return fixture(filePath: "", status: 500, headers: nil)
         }

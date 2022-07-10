@@ -19,10 +19,10 @@ targets:
       configs:
         Debug:
           CODE_SIGN_IDENTITY: iPhone Developer
-          PROVISIONING_PROFILE_SPECIFIER: "TrackRoute App Development"
+          PROVISIONING_PROFILE_SPECIFIER: "TrackRoute iOS Development"
         Release:
           CODE_SIGN_IDENTITY: iPhone Distribution
-          PROVISIONING_PROFILE_SPECIFIER: "TrackRoute App AppStore"
+          PROVISIONING_PROFILE_SPECIFIER: "TrackRoute iOS AppStore"
     scheme:
       testTargets:
         - TrackRouteTests
