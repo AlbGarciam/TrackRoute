@@ -1,11 +1,3 @@
-//
-//  APISession.swift
-//  APIRequestTest
-//
-//  Created by Alberto García-Muñoz on 21/06/2019.
-//  Copyright © 2019 SoundApp. All rights reserved.
-//
-
 import Combine
 import Foundation
 

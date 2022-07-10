@@ -2,6 +2,7 @@ import Foundation
 
 enum TrackRouteDateFormat: String {
     case slashes = "dd/MM/yyyy"
+    case trip = "dd MMM • HH:MM"
     case graph = "dd/MM"
 }
 

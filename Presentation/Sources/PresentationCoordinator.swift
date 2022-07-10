@@ -1,7 +1,7 @@
 import DependencyInjection
 import SwiftUI
 
-public final class PacerCoordinator {
+public final class PresentationCoordinator {
     @Injected private var coordinator: CoordinatorContract
 
     public init() {}
@@ -10,6 +10,6 @@ public final class PacerCoordinator {
         guard let coordinator = coordinator as? Coordinator else {
             fatalError("Invalid coordinator")
         }
-        return CoordinatorView(coordinator: coordinator)
+        return CoordinatorView(coordinator)
     }
 }

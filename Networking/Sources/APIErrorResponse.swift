@@ -1,10 +1,3 @@
-//
-//  APIError.swift
-//  APIRequestTest
-//
-//  Created by Alberto García-Muñoz on 21/06/2019.
-//  Copyright © 2019 SoundApp. All rights reserved.
-//
 import Foundation
 
 public struct APIErrorResponse: Error, Equatable {

@@ -2,29 +2,26 @@ targets:
   TrackRoute:
     type: application
     platform: iOS
+    sources: Sources
     dependencies:
       - target: Components
-        embed: false
       - target: Data
-        embed: false
       - target: Domain
-        embed: false
       - target: Presentation
-        embed: false
       - target: Networking
-        embed: false
       - framework: ../Frameworks/DependencyInjection.xcframework
-        embed: false
-    sources:
-      - ./Sources
     settings:
       base:
-        SDKROOT: iOS
+        BUILD_LIBRARY_FOR_DISTRIBUTION: NO
+        PRODUCT_BUNDLE_IDENTIFIER: "com.mobile.trackRoute"
+        OTHER_LDFLAGS: $(inherited) -ObjC
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
       configs:
         Debug:
+          CODE_SIGN_IDENTITY: iPhone Developer
           PROVISIONING_PROFILE_SPECIFIER: "TrackRoute App Development"
         Release:
+          CODE_SIGN_IDENTITY: iPhone Distribution
           PROVISIONING_PROFILE_SPECIFIER: "TrackRoute App AppStore"
     scheme:
       testTargets:

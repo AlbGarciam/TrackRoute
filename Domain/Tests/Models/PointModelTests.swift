@@ -14,4 +14,11 @@ class PointModelTests: XCTestCase {
         let pointB = PointModel(12.21, 12.2)
         XCTAssertNotEqual(pointA, pointB)
     }
+
+    func testMiddle() {
+        let pointA = PointModel(1, 1)
+        let pointB = PointModel(2, 2)
+        let expected = PointModel(1.5, 1.5)
+        XCTAssertEqual(pointA.middle(between: pointB), expected)
+    }
 }

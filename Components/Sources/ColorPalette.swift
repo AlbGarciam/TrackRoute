@@ -1,21 +1,23 @@
 import SwiftUI
 
-public enum ColorPalette: UInt {
-    case highlight = 0xc6ec15
-    case primaryText = 0xffffff
-    case secondaryText = 0x439384
-    case tertiaryText = 0xf1f3de
-    case invertedPrimaryText = 0x000000
-    case card = 0x1f201f
+enum ColorPalette: UInt {
+    case fluorescent = 0xc6ec15
+    case primaryDark = 0x000000
+    case secondaryDark = 0x439384
+    case tertiaryDark = 0xf1f3de
+    case primaryLight = 0xffffff
+    case secondaryLight = 0xCBCCCB
 }
 
 public extension Color {
-    static var highlight: Color { Color(.highlight) }
-    static var primaryText: Color { Color(.primaryText) }
-    static var secondaryText: Color { Color(.secondaryText) }
-    static var tertiaryText: Color { Color(.tertiaryText) }
-    static var invertedPrimaryText: Color { Color(.invertedPrimaryText) }
-    static var card: Color { Color(.card) }
+    static var highlight: Color { Color(.fluorescent) }
+    static var primaryText: Color { Color(.primaryDark) }
+    static var secondaryText: Color { Color(.secondaryDark) }
+    static var tertiaryText: Color { Color(.tertiaryDark) }
+    static var invertedPrimaryText: Color { Color(.primaryLight) }
+    static var darkHighlight: Color { Color(.secondaryDark) }
+    static var cardBorder: Color { Color(.secondaryLight) }
+    static var background: Color { Color(.primaryLight) }
 
     internal init(_ palette: ColorPalette, alpha: Double = 1) {
         self.init(hex: palette.rawValue, alpha: alpha)

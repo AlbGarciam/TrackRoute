@@ -1,13 +1,12 @@
 import DependencyInjection
+import Domain
 import Foundation
-
-extension Bundle {
-    var landing: Bundle { Bundle(for: Module.self) }
-}
 
 final class Module: ModuleContract {
     static func get() {
-        shared(BeeperContract.self, Beeper.self)
         shared(CoordinatorContract.self, Coordinator.self)
+        if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+            shared(GetTripsUseCaseContract.self, GetTripsUseCaseMock.self)
+        }
     }
 }

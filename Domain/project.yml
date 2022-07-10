@@ -19,3 +19,4 @@ targets:
     sources: ./Tests
     dependencies:
       - target: Domain
+      - framework: ../Frameworks/DependencyInjection.xcframework
