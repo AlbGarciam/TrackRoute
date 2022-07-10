@@ -8,3 +8,9 @@
 "trip_state_finalized" = "Finished";
 "trip_state_cancelled" = "Cancelled";
 "trip_stops" = "Stop(s)";
+
+"detail_screen_title" = "Your recent trip";
+"detail_screen_origin_title" = "Origin: ";
+"detail_screen_destination_title" = "Destination: ";
+"detail_screen_stop_text" = "Stop";
+"detail_screen_stops_title" = "Stops in this trip";

@@ -1,7 +1,7 @@
 import Combine
 import DependencyInjection
 import Domain
-import UIKit
+import Foundation
 
 final class HistoryViewModel: ObservableObject {
     @Injected private var coordinator: CoordinatorContract

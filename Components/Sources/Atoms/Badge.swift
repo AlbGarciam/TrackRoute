@@ -3,6 +3,8 @@ import SwiftUI
 public struct Badge: View {
     private var title: LocalizedStringKey = ""
 
+    public init() { /* Just to be able to initialize it */ }
+
     public var body: some View {
         Text(title)
             .font(.semibold(12))

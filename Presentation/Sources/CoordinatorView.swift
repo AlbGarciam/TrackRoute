@@ -21,7 +21,9 @@ struct CoordinatorView: BaseCoordinatorView {
     func getNavigationHierarchy() -> some View {
         NavigationView(color: Color.background) {
             HistoryView(coordinator.initialStep.viewModel as! HistoryViewModel)
-                .navigate(PresentationFlowIdentifier.detail, coordinator) { $0 }
+                .navigate(PresentationFlowIdentifier.detail, coordinator) {
+                    $0.navigationBarTitleDisplayMode(.inline)
+                }
                 .navigationBarHidden(true)
         }
         .navigationViewStyle(.stack)

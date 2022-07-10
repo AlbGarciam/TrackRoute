@@ -1,6 +1,7 @@
 import Combine
 import Presentation
 import SwiftUI
+import UIKit
 
 @main
 struct Application: App {
@@ -8,5 +9,12 @@ struct Application: App {
         WindowGroup {
             PresentationCoordinator().start()
         }
+    }
+}
+
+extension UINavigationController {
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = nil
     }
 }

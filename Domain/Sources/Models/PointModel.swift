@@ -1,3 +1,5 @@
+import Foundation
+
 public struct PointModel: Equatable {
     public let latitude, longitude: Double
 
@@ -9,5 +11,11 @@ public struct PointModel: Equatable {
         let newLatitude = (latitude + other.latitude) / 2
         let newLongitude = (longitude + other.longitude) / 2
         return PointModel(newLatitude, newLongitude)
+    }
+
+    public func distance(between other: PointModel) -> Double {
+        let latitudeValue = pow((latitude - other.latitude), 2)
+        let longitudeValue = pow((longitude - other.longitude), 2)
+        return sqrt(latitudeValue + longitudeValue)
     }
 }

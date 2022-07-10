@@ -32,7 +32,7 @@ struct HistoryView: View {
         }
         .coordinateSpace(name: "pullToRefresh")
         .padding(.top, 24)
-        .padding(.horizontal, 32)
+        .padding(.horizontal, 24)
         .edgesIgnoringSafeArea(.bottom)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
