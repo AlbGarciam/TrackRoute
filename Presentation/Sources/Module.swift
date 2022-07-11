@@ -7,6 +7,7 @@ final class Module: ModuleContract {
         shared(CoordinatorContract.self, Coordinator.self)
         if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
             shared(GetTripsUseCaseContract.self, GetTripsUseCaseMock.self)
+            shared(StopDetailsUseCaseContract.self, StopDetailsUseCaseMock.self)
         }
     }
 }

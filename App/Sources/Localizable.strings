@@ -14,3 +14,12 @@
 "detail_screen_destination_title" = "Destination: ";
 "detail_screen_stop_text" = "Stop";
 "detail_screen_stops_title" = "Stops in this trip";
+
+"stop_screen_passenger_title" = "Passenger name: ";
+"stop_screen_address_title" = "Stop address: ";
+"stop_screen_date_title" = "Date: ";
+"stop_screen_price_title" = "Price: ";
+"stop_screen_error_title" = "There was an error";
+"stop_screen_error_subtitle" = "Pull to refresh the information";
+"stop_screen_fetching_title" = "Fetching your stop";
+"stop_screen_title" = "Stop information";

@@ -16,14 +16,15 @@ struct TripDetailView: View {
             VStack(alignment: .leading, spacing: 24) {
                 getHeader()
                 getTripDetails()
-                MapView(viewModel.region,
-                        viewModel.routePoints.map { $0.toCoordinates() },
-                        viewModel.routeStart.toCoordinates(),
-                        viewModel.routeEnd.toCoordinates())
+                MapView(viewModel.trip.mkRegion,
+                        viewModel.trip.route.map { $0.toCoordinates() },
+                        viewModel.highlightedLocations.map { $0.toCoordinates() })
                     .frame(maxWidth: .infinity)
                     .frame(height: 250, alignment: .center)
                     .cornerRadius(24)
-                getStops()
+                if !viewModel.trip.stops.isEmpty {
+                    getStops()
+                }
             }
         }
         .padding(.top, 24)
@@ -33,20 +34,19 @@ struct TripDetailView: View {
     }
 
     private func getHeader() -> some View {
-        let badgeKey: LocalizedStringKey = "trip_state_\(viewModel.status.rawValue)"
-        return HStack {
+        HStack {
             VStack {
                 Text("detail_screen_title")
                     .font(.boldItalic(32))
                     .foregroundColor(.primaryText)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Text(TrackRouteDateFormatter.format(viewModel.date, .trip))
+                Text(TrackRouteDateFormatter.format(viewModel.trip.startDate, .trip))
                     .font(.regular(16))
                     .foregroundColor(.primaryText)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             Spacer()
-            Badge().setTitle(badgeKey)
+            Badge().setTitle(viewModel.trip.status.localizedKey)
         }
     }
 
@@ -54,11 +54,11 @@ struct TripDetailView: View {
         VStack(alignment: .leading, spacing: 4) {
             Text("detail_screen_origin_title")
                 .font(.boldItalic(16)) +
-            Text(viewModel.origin)
+            Text(viewModel.trip.origin.address)
                 .font(.regular(16))
             Text("detail_screen_destination_title")
                 .font(.boldItalic(16)) +
-            Text(viewModel.destination)
+            Text(viewModel.trip.destination.address)
                 .font(.regular(16))
         }
         .foregroundColor(.primaryText)
@@ -71,22 +71,20 @@ struct TripDetailView: View {
                 .foregroundColor(.primaryText)
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 8) {
-                    ForEach(Array(zip(viewModel.routeStops.indices, viewModel.routeStops)), id: \.0) { index, stop in
+                    ForEach(Array(0..<viewModel.trip.stops.count), id: \.self) { index in
                         StopCard()
                             .setTitle("\(NSLocalizedString("detail_screen_stop_text", comment: "")) \(index + 1) ")
-//                            .onTapGesture { viewModel.didTapOnTripAt(index) }
+                            .onTapGesture { viewModel.didTapOnStopAt(index) }
                     }
                 }
             }
-
-
         }
     }
 }
 
-private extension PointModel {
-    func toCoordinates() -> CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+private extension TripModel.Status {
+    var localizedKey: LocalizedStringKey {
+        return LocalizedStringKey(stringLiteral: "trip_state_\(rawValue)")
     }
 }
 

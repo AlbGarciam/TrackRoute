@@ -4,17 +4,14 @@ import MapKit
 public struct MapView: UIViewRepresentable {
     private let region: MKCoordinateRegion
     private let route: [CLLocationCoordinate2D]
-    private let start: CLLocationCoordinate2D
-    private let end: CLLocationCoordinate2D
+    private let markupLocations: [CLLocationCoordinate2D]
 
     public init(_ region: MKCoordinateRegion,
-                _ route: [CLLocationCoordinate2D],
-                _ start: CLLocationCoordinate2D,
-                _ end: CLLocationCoordinate2D) {
+                _ route: [CLLocationCoordinate2D] = [],
+                _ markupLocations: [CLLocationCoordinate2D] = []) {
         self.region = region
         self.route = route
-        self.start = start
-        self.end = end
+        self.markupLocations = markupLocations
     }
 
     public func makeUIView(context: Context) -> MKMapView {
@@ -26,12 +23,11 @@ public struct MapView: UIViewRepresentable {
         mapView.isUserInteractionEnabled = false
         let polyline = MKPolyline(coordinates: route, count: route.count)
         mapView.addOverlay(polyline)
-        let startAnnotation = MKPointAnnotation()
-        startAnnotation.coordinate = start
-        mapView.addAnnotation(startAnnotation)
-        let endAnnotation = MKPointAnnotation()
-        endAnnotation.coordinate = end
-        mapView.addAnnotation(endAnnotation)
+        markupLocations.forEach { location in
+            let anotation = MKPointAnnotation()
+            anotation.coordinate = location
+            mapView.addAnnotation(anotation)
+        }
         return mapView
     }
 

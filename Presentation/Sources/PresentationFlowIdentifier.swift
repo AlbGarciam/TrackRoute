@@ -1,7 +1,7 @@
 import Components
 
 enum PresentationFlowIdentifier: String, FlowStepIdentifier {
-    case history, detail
+    case history, detail, stopDetail
 }
 
 extension FlowStep {

@@ -23,6 +23,7 @@ struct CoordinatorView: BaseCoordinatorView {
             HistoryView(coordinator.initialStep.viewModel as! HistoryViewModel)
                 .navigate(PresentationFlowIdentifier.detail, coordinator) {
                     $0.navigationBarTitleDisplayMode(.inline)
+                        .present(PresentationFlowIdentifier.stopDetail, coordinator) { $0 }
                 }
                 .navigationBarHidden(true)
         }
