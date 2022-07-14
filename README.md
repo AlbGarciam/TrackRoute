@@ -25,3 +25,7 @@ Dependencies are intended to be delivered as precompiled frameworks. `Polyline` 
 * **DependencyInjection**: Is located in frameworks (usually I'll distribute it through SPM instead of adding it on the repo). If you want to check the code it's located [here](https://github.com/AlbGarciam/DependencyInjection). Allows dependency inversion in a simple manner.
 * **OHHTTPStubs**: Makes network testing easier.
 * **Polyline**: Requested by the project
+
+## About testing
+
+Because of the limited time I was not able to achieve 100% of code coverage. The tests are intended to show how I will code the tests for each separate element.
