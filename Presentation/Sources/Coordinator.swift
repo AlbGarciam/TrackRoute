@@ -6,6 +6,7 @@ import SwiftUI
 protocol CoordinatorContract: BaseCoordinatorContract, Injectable {
     func navigateToDetail(_ trip: TripModel)
     func navigateToStop(_ identifier: String)
+    func navigateToContact()
     func goBack()
 }
 
@@ -29,6 +30,8 @@ final class Coordinator: CoordinatorContract, ObservableObject {
             return AnyView(TripDetailView(viewModel))
         case (.stopDetail, let viewModel as StopDetailViewModel):
             return AnyView(StopDetailView(viewModel))
+        case (.contact, let viewModel as ContactViewModel):
+            return AnyView(ContactView(viewModel))
         default:
             fatalError("Invalid navigation")
         }
@@ -43,6 +46,11 @@ final class Coordinator: CoordinatorContract, ObservableObject {
     func navigateToStop(_ identifier: String) {
         let viewModel = StopDetailViewModel(identifier)
         currentStep = FlowStep(viewModel: viewModel, identifier: .stopDetail, parent: currentStep)
+    }
+
+    func navigateToContact() {
+        let viewModel = ContactViewModel()
+        currentStep = FlowStep(viewModel: viewModel, identifier: .contact, parent: currentStep)
     }
 
     func goBack() {

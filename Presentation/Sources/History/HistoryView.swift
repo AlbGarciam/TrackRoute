@@ -15,10 +15,21 @@ struct HistoryView: View {
         ScrollView {
             PullToRefresh("pullToRefresh") { self.viewModel.refresh() }
             VStack(spacing: 40) {
-                Text("history_screen_title")
-                    .font(.boldItalic(32))
-                    .foregroundColor(.primaryText)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                HStack(alignment: .center) {
+                    Text("history_screen_title")
+                        .font(.boldItalic(32))
+                        .foregroundColor(.primaryText)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer()
+                    Image(systemName: "questionmark.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.primaryText)
+                        .padding(.vertical, 12)
+                        .padding(.leading, 24) // Keep it aligned to the right
+                        .frame(width: 44, height: 44, alignment: .center)
+                        .onTapGesture { self.viewModel.didTapHelp() }
+                }
                 if case .loading = viewModel.state {
                     getLoadingState()
                 }
@@ -29,12 +40,12 @@ struct HistoryView: View {
                     getDisplayingState(trips)
                 }
             }
+            .padding(.horizontal, 24)
         }
         .coordinateSpace(name: "pullToRefresh")
-        .padding(.top, 24)
-        .padding(.horizontal, 24)
         .edgesIgnoringSafeArea(.bottom)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.top, 24)
     }
 
     private func getLoadingState() -> some View {

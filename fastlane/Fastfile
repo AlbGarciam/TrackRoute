@@ -9,4 +9,8 @@ platform :ios do
   lane :prepare do
     sh("cd .. && xcodegen && cd fastlane")
   end
+
+  lane :test do 
+    run_tests(scheme: "TrackRouteTests")
+  end
 end

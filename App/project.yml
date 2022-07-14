@@ -9,6 +9,8 @@ targets:
       - target: Domain
       - target: Presentation
       - target: Networking
+      - package: IQKeyboardManager
+        product: IQKeyboardManagerSwift
       - framework: ../Frameworks/DependencyInjection.xcframework
     settings:
       base:
@@ -24,14 +26,8 @@ targets:
           CODE_SIGN_IDENTITY: iPhone Distribution
           PROVISIONING_PROFILE_SPECIFIER: "TrackRoute iOS AppStore"
     scheme:
+      gatherCoverageData: true
       testTargets:
-        - TrackRouteTests
-  TrackRouteTests:
-    type: bundle.unit-test
-    platform: iOS
-    sources: ./Tests
-    dependencies:
-      - target: ComponentsTests
-      - target: DataTests
-      - target: DomainTests
-      - target: PresentationTests
+        - PresentationTests
+        - DomainTests
+        - DataTests

@@ -26,6 +26,7 @@ struct CoordinatorView: BaseCoordinatorView {
                         .present(PresentationFlowIdentifier.stopDetail, coordinator) { $0 }
                 }
                 .navigationBarHidden(true)
+                .present(PresentationFlowIdentifier.contact, coordinator) { $0 }
         }
         .navigationViewStyle(.stack)
     }

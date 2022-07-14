@@ -24,6 +24,10 @@ final class HistoryViewModel: ObservableObject {
         loadTrips()
     }
 
+    func didTapHelp() {
+        coordinator.navigateToContact()
+    }
+
     private func loadTrips() {
         state = .loading
         getTripsCancellable?.cancel()

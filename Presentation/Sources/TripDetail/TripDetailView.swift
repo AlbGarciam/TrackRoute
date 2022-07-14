@@ -26,9 +26,9 @@ struct TripDetailView: View {
                     getStops()
                 }
             }
+            .padding(.horizontal, 24)
         }
         .padding(.top, 24)
-        .padding(.horizontal, 24)
         .edgesIgnoringSafeArea(.bottom)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

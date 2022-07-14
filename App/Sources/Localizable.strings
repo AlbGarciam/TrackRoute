@@ -23,3 +23,12 @@
 "stop_screen_error_subtitle" = "Pull to refresh the information";
 "stop_screen_fetching_title" = "Fetching your stop";
 "stop_screen_title" = "Stop information";
+
+"contact_screen_title" = "Contact form";
+"contact_name_placeholder" = "Name";
+"contact_surname_placeholder" = "Family name";
+"contact_email_placeholder" = "Email address";
+"contact_phone_placeholder" = "Phone number (optional)";
+"contact_date_placeholder" = "Issue date";
+"contact_description_title" = "Tell us what happened";
+"contact_send_button" = "Send feedback";
